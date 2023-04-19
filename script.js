@@ -1,6 +1,3 @@
-// Wrap all code that interacts with the DOM in a call to jQuery to ensure that
-// the code isn't run until the browser has finished rendering all the elements
-// in the html.
 $(function () {
   var currentTime = dayjs().hour();
   var currentDate = dayjs().format('MMM/DD/YYYY');
@@ -17,7 +14,7 @@ $(function () {
       $(this).removeClass('future')
     } else if (currentTime > blockTime) {
       $(this).addClass('past')
-      $(this).removeClass('present')
+      $(this).removeClass('present')  
       $(this).removeClass('future')
     } else {
       $(this).addClass('future')
@@ -38,6 +35,4 @@ $(function () {
       localStorage.setItem('saveData', JSON.stringify(data));
     });
   });
-
-  // TODO: Add code to display the current date in the header of the page.
 });
